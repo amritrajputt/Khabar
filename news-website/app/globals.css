@@ -168,3 +168,12 @@
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px 0px #000000;
 }
+
+/* Hide scrollbars for touch scroll navigation items on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

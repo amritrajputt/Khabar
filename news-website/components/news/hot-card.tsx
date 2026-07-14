@@ -1,5 +1,5 @@
 import { AvatarBadge } from "./avatar-badge"
-import { CaretUp, CaretDown, Globe, Clock } from "@phosphor-icons/react"
+import { CaretUp, CaretDown, CaretLeft, CaretRight, Globe, Clock } from "@phosphor-icons/react"
 import { Article } from "./types"
 
 interface HotCardProps {
@@ -88,7 +88,7 @@ export function HotCard({
           <div className="absolute inset-0 bg-[#e5c158]/5 mix-blend-multiply pointer-events-none"></div>
         </div>
 
-        <div className="flex flex-col w-12 justify-between shrink-0">
+        <div className="hidden sm:flex flex-col w-12 justify-between shrink-0">
           <button 
             onClick={onPrev}
             className="flex-1 border-2 border-black bg-white hover:bg-neutral-100 flex items-center justify-center brutal-btn mb-1.5"
@@ -107,6 +107,25 @@ export function HotCard({
             <CaretDown size={16} weight="bold" />
           </button>
         </div>
+      </div>
+
+      {/* Mobile Slider Controls */}
+      <div className="flex sm:hidden items-center gap-3 w-full">
+        <button 
+          onClick={onPrev}
+          className="w-12 h-10 border-2 border-black bg-white hover:bg-neutral-100 flex items-center justify-center brutal-btn"
+        >
+          <CaretLeft size={16} weight="bold" />
+        </button>
+        <div className="flex-1 h-10 border-2 border-black bg-[#e5c158] flex items-center justify-center text-xs font-black select-none brutal-shadow-sm">
+          {pageIndex}
+        </div>
+        <button 
+          onClick={onNext}
+          className="w-12 h-10 border-2 border-black bg-white hover:bg-neutral-100 flex items-center justify-center brutal-btn"
+        >
+          <CaretRight size={16} weight="bold" />
+        </button>
       </div>
 
       <div className="flex flex-col gap-3">
